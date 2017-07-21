@@ -1,0 +1,17 @@
+<div ng-repeat="blocks in vm.model.venueRespone.response.groups[0].items">
+
+    <div>
+        <h2>{{blocks.venue.name}}</h2>
+        <h3>{{blocks.venue.location.address}}</h3>
+        <div ng-repeat="photo in vm.model.venueRespone.response.groups[0].items[$index] track by $index">
+
+        <img ng-src="{{photo.categories[0].icon.prefix}}150x150{{photo.categories[0].icon.suffix}}" {{photo.categories[0].icon | json}}
+        </div>
+    </div>
+
+
+    
+
+
+</div>
+
