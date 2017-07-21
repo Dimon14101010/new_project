@@ -11,5 +11,9 @@ angular.module ('myApp')
            templateUrl : 'dashboard.html',
            controller : 'venueCtrl',
            controllerAs : 'vm'
+           })
+           .state ('vCard',{
+               url:'/venue/:id',
+               templateUrl : 'templates/vcard.html'
            });
     });
