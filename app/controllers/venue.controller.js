@@ -20,14 +20,14 @@ function venueCtrl(venueApi,$geolocation,$scope) {
 
 
     }
-    console.log('coord');
+    console.log('coord',position);
 
 
     let vm = this;
 
     vm.model = {
         venueDataId : [],
-        venueRespone : venueApi.venueValues.get({lat : position.lat}).$promise
+        venueRespone : venueApi.venueValues.get({lat : position.lat , long : position.long}).$promise
                  .then(function(response) {
                 vm.model.venueRespone = response;
                 vm.model.venueRespone.response.groups[0].items.forEach(function(venue) {venue.venuePhotos = venueApi.venuePhotos.get({id: venue.venue.id});
