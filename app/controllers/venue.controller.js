@@ -3,19 +3,32 @@
 angular.module ('myApp')
 .controller ('venueCtrl', venueCtrl);
 
-venueCtrl.$inject = ['venueApi'];
+venueCtrl.$inject = ['venueApi','$geolocation','$scope'];
 
-function venueCtrl(venueApi) {
+function venueCtrl(venueApi,$geolocation,$scope) {
+
+    getLocate();
+    function getLocate() {
+        $geolocation.getCurrentPosition().then(function(location) {
+            $scope.mesto = location});
+        $scope.coords = $geolocation.position.coords;
+    }
+    console.log('coord',getLocate());
+
+
     let vm = this;
 
     vm.model = {
         venueDataId : [],
         venueRespone : venueApi.venueValues.get().$promise
-            .then(function(response) {
+                 .then(function(response) {
                 vm.model.venueRespone = response;
-                vm.model.venueDataId = response.response.groups[0].items.forEach(function(venue){vm.model.venueDataId.push (venue);console.log ('venues inside',venue)})
-                })
+                vm.model.venueRespone.response.groups[0].items.forEach(function(venue) {venue.venuePhotos = venueApi.venuePhotos.get({id: venue.venue.id});
+
+                })})
 
     };
-    console.log ('controller',vm.model.venueDataId)
+
+
+    console.log ('controller');
 }
