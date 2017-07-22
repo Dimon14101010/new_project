@@ -13,7 +13,7 @@ function venueCtrl(venueApi) {
         venueRespone : venueApi.venueValues.get().$promise
             .then(function(response) {
                 vm.model.venueRespone = response;
-                vm.model.venueDataId = response.response.groups[0].items.forEach(function(venue){console.log ('venues inside',venue)})
+                vm.model.venueDataId = response.response.groups[0].items.forEach(function(venue){vm.model.venueDataId.push (venue);console.log ('venues inside',venue)})
                 })
 
     };

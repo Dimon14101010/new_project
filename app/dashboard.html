@@ -1,4 +1,5 @@
-<pre>proverka id {{vm.model.venueDataId}}</pre>
+
+<div ng-repeat="ids in vm.model.venueDataId">proverka id{{ids.referralId}}</div>
 <div ng-repeat="blocks in vm.model.venueRespone.response.groups[0].items" style="background-color: #999999">
 <pre>{{blocks}}</pre>
     <div>
