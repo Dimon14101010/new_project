@@ -1,13 +1,15 @@
-<pre>{{vm.model.venueId[0].venue}}</pre>
+<pre>proverka id {{vm.model.venueDataId}}</pre>
 <div ng-repeat="blocks in vm.model.venueRespone.response.groups[0].items" style="background-color: #999999">
-
+<pre>{{blocks}}</pre>
     <div>
         <h2>{{blocks.venue.name}}</h2>
         <h3>{{blocks.venue.location.address}}</h3>
         <div ng-repeat="group in vm.model.venueRespone.response.groups[0].items[$index].venue.photos.groups track by $index">
 
-        <img ng-src="{{group.items[0].prefix}}150x150{{group.items[0].suffix}}" ui-sref="vCard"/>
-            <div>comments :<img ng-src="{{blocks.tips[0].user.photo.prefix}}30x30{{blocks.tips[0].user.photo.suffix}}" /> <pre>{{blocks.tips[0].user.firstName +' '+ blocks.tips[0].user.lastName}}<br>{{blocks.tips[0].text}}</pre></div>
+        <img ng-src="{{group.items[0].prefix}}150x150{{group.items[0].suffix}}"/>
+            <a  ui-sref="vCard ">link</a>
+            <div>comments :<img ng-src="{{blocks.tips[0].user.photo.prefix}}30x30{{blocks.tips[0].user.photo.suffix}}" />
+            <pre>{{blocks.tips[0].user.firstName +' '+ blocks.tips[0].user.lastName}}<br>{{blocks.tips[0].text}}</pre></div>
         </div>
     </div>
 

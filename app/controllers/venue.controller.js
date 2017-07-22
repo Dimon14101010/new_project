@@ -9,9 +9,13 @@ function venueCtrl(venueApi) {
     let vm = this;
 
     vm.model = {
-        venueId : [],
+        venueDataId : [],
         venueRespone : venueApi.venueValues.get().$promise
-            .then(function(response) {vm.model.venueId = response.response.groups[0].items})
+            .then(function(response) {
+                vm.model.venueRespone = response;
+                vm.model.venueDataId = response.response.groups[0].items.forEach(function(venue){console.log ('venues inside',venue)})
+                })
+
     };
-    console.log ('controller',vm.model)
+    console.log ('controller',vm.model.venueDataId)
 }
