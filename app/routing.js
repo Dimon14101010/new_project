@@ -13,7 +13,9 @@ angular.module ('myApp')
            controllerAs : 'vm'
            })
            .state ('vCard',{
-               url:'/venue/:id',
-               templateUrl : 'templates/vcard.html'
+               url:'/:id',
+               templateUrl : 'templates/vcard.html',
+               controller : 'vcardCtrl',
+               controllerAs : 'vm'
            });
     });

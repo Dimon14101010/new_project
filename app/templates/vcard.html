@@ -1,5 +1,16 @@
 <div>
+   <h1>{{vm.model.vcardRespone.response.venue.name}}</h1><br>
+   <h3>{{vm.model.vcardRespone.response.venue.location.address}}</h3>
+    <div ng-repeat="categorie in vm.model.vcardRespone.response.venue.categories">
+        <span>{{categorie.name}}</span>
+    </div>
+    <h4>rating{{vm.model.vcardRespone.response.venue.rating}}</h4>
+    comments
+    info here <pre>{{vm.model.vcardRespone.response | json}}</pre>
 
-    i'am venue card
+
+        <ng-map center="{{vm.model.vcardRespone.response.venue.location.lat}},{{vm.model.vcardRespone.response.venue.location.lng}}">
+            <marker position="{{vm.model.vcardRespone.response.venue.location}}"></marker>
+        </ng-map>
 
 </div>

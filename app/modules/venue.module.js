@@ -13,6 +13,6 @@ function venueApi($resource) {
 
 
     };
-    console.log('srabotalo',venueData);
+
     return venueData;
 }

@@ -1,3 +1,4 @@
+
 <div>{{mesto.coords.latitude}}</div>
 <div>{{mesto.coords.longitude}}</div>
 
@@ -21,7 +22,8 @@
         <div ng-repeat="group in vm.model.venueRespone.response.groups[0].items[$index].venue.photos.groups track by $index">
 
         <img ng-src="{{group.items[0].prefix}}150x150{{group.items[0].suffix}}"/>
-            <a  ui-sref="vCard ({id: '{{group.items[0].id}}'})">link forward</a>
+
+            <a  ui-sref="vCard ({id: '{{blocks.venue.id}}'})">link forward</a>
             <div>comments :<img ng-src="{{blocks.tips[0].user.photo.prefix}}30x30{{blocks.tips[0].user.photo.suffix}}" />
             <pre>{{blocks.tips[0].user.firstName +' '+ blocks.tips[0].user.lastName}}<br>{{blocks.tips[0].text}}</pre></div>
         </div>
