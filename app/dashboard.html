@@ -1,7 +1,13 @@
 <div>{{mesto.coords.latitude}}</div>
 <div>{{mesto.coords.longitude}}</div>
 
-
+<div map-lazy-load="https://maps.google.com/maps/api/js?key=AIzaSyDSfPMHa-sYjwY19jqBr5jEPju8Jtu9ANM">
+    <ng-map center="{{address}}" zoom="12">
+        <marker ng-repeat="marker in vm.model.venueRespone.response.groups[0].items" position="[{{marker.venue.location}}]" title="{{marker.venue.name}}"></marker>
+    </ng-map>
+    <br>Address : <input ng-model="address"/> <input type="submit" ng-click="update (address)" name="searchHere" value="искать здесь"/>
+    <pre>{{position | json}}</pre>
+</div>
 
 <div ng-repeat="blocks in vm.model.venueRespone.response.groups[0].items" style="background-color: #999999">
 

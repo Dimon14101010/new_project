@@ -1,5 +1,5 @@
 'use strict';
 
 
-angular.module('myApp', ['ui.router','ngResource','ngGeolocation']);
+angular.module('myApp', ['ui.router','ngResource','ngGeolocation','ngMap']);
 
