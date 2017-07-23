@@ -31,12 +31,9 @@ function venueCtrl(venueApi,$geolocation,$scope,NgMap) {
             $scope.address = position.lat + ',' + position.long;
         });
 
-        NgMap.getMap().then(function(map) {
-            console.log('center',map.getCenter());
-            console.log('markers', map.markers);
-            console.log('shapes', map.shapes);
 
-        });
+
+
 
         $scope.update = function (address) {
             NgMap.getMap().then(function(map) {
