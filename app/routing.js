@@ -30,4 +30,8 @@ angular.module ('myApp')
                controller : 'regCtrl',
                controllerAs : 'vm'
            })
+           .state ('test',{
+               url: '/test',
+               templateUrl :'test.html'
+           })
     });
