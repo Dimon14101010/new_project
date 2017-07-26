@@ -11,10 +11,10 @@
 <br>Add comment :
     <form name="comment">
 
-        <input type="text" name="text" ng-model="text">
-        <input type="submit" ng-click="postTips(text)">
-        {{text}}<br><br>
-        controller tips{{vm.tips}}
+        <input type="text" name="text" ng-model="tips.text">
+        <input type="button" ng-click="postTips(tips)" value="send comment">
+        {{tips.text}}<br><br>
+        controller tips{{vm.model.tips}}
 
     </form>
 
