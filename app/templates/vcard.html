@@ -2,11 +2,22 @@
    <h1>{{vm.model.vcardRespone.response.venue.name}}</h1><br>
    <h3>{{vm.model.vcardRespone.response.venue.location.address}}</h3>
     <div ng-repeat="categorie in vm.model.vcardRespone.response.venue.categories">
-        <span>{{categorie.name}}</span>
+        <span>категории:{{categorie.name}}</span>
     </div>
-    <h4>rating{{vm.model.vcardRespone.response.venue.rating}}</h4>
-    comments
-    info here <pre>{{vm.model.vcardRespone.response | json}}</pre>
+    <h4>rating{{vm.model.vcardRespone.response.venue.rating}} / 10</h4>
+    <h4>phone{{vm.model.vcardRespone.response.venue.contact.phone}}</h4>
+
+    <div><a ui-sref="vCard.comments_fs"> comments</a><div><ui-view></ui-view></div></div>
+<br>Add comment :
+    <form name="comment">
+
+        <input type="text" name="text" ng-model="text">
+        <input type="submit" ng-click="postTips(text)">
+        {{text}}<br><br>
+        controller tips{{vm.tips}}
+
+    </form>
+
 
 
         <ng-map center="{{vm.model.vcardRespone.response.venue.location.lat}},{{vm.model.vcardRespone.response.venue.location.lng}}">

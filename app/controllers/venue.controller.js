@@ -14,9 +14,10 @@ function venueCtrl(venueApi,$geolocation,$scope,NgMap) {
     function getLocate() {
 
         $geolocation.getCurrentPosition().then(function(location) {
+
             position.lat = location.coords.latitude;
         position.long = location.coords.longitude;
-
+            $scope.address = position.lat + ',' + position.long;
         vm.model = {
             position : position,
             venueRespone : venueApi.venueValues.get({lat : position.lat , long : position.long}).$promise
@@ -28,7 +29,7 @@ function venueCtrl(venueApi,$geolocation,$scope,NgMap) {
 
         };
 
-            $scope.address = position.lat + ',' + position.long;
+
         });
 
 

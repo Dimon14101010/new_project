@@ -5,6 +5,12 @@ angular.module ("myApp")
 vcardCtrl.$inject =['$stateParams','vcardApi','NgMap','$scope'];
 
 function vcardCtrl($stateParams,vcardApi,NgMap,$scope) {
+    $scope.tips = {};
+    function postTips(text) {
+        $scope.tips = angular.copy (text);
+        console.log('text tips here');
+    }
+
     let vm = this;
 
     vm.model = {
@@ -12,7 +18,10 @@ function vcardCtrl($stateParams,vcardApi,NgMap,$scope) {
             .then (function (response) {
                 vm.model.vcardRespone = response;
             })
-    }
+
+    };
+
+
     console.log('response',vm.model.vcardRespone);
     return vm;
 };

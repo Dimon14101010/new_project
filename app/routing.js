@@ -17,5 +17,13 @@ angular.module ('myApp')
                templateUrl : 'templates/vcard.html',
                controller : 'vcardCtrl',
                controllerAs : 'vm'
-           });
+           })
+           .state ('vCard.comments_fs',{
+               url:'comments/:id',
+               templateUrl :'templates/comments.html',
+               controller:'vcardCtrl',
+               controllerAs: 'vm'
+           }
+
+        )
     });
