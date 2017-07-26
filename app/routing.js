@@ -23,7 +23,11 @@ angular.module ('myApp')
                templateUrl :'templates/comments.html',
                controller:'vcardCtrl',
                controllerAs: 'vm'
-           }
-
-        )
+           })
+           .state ('reg',{
+               url: '/reg',
+               templateUrl : 'templates/reg.html',
+               controller : 'regCtrl',
+               controllerAs : 'vm'
+           })
     });

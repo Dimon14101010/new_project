@@ -13,13 +13,15 @@ function vcardCtrl($stateParams,vcardApi,NgMap,$scope) {
             .then (function (response) {
                 vm.model.vcardRespone = response;
             }),
-        tips : $scope.tips
+        tips : $scope.tips,
+        sendTips : function (tips) {
+            vm.model.tips = angular.copy(tips);
+            vcardApi.vcardTips.save ({vId : $stateParams.id,text:vm.model.tips.text});
+            console.log ('tips srabotalo')
+        }
 
     };
-    function postTips(tips) {
-        vm.model.tips = angular.copy(tips);
-        console.log('tips here')
-    }
+
 
     console.log('response',vm.model.vcardRespone);
     return vm;

@@ -12,7 +12,7 @@
     <form name="comment">
 
         <input type="text" name="text" ng-model="tips.text">
-        <input type="button" ng-click="postTips(tips)" value="send comment">
+        <input type="submit" ng-click="vm.model.sendTips(tips)" value="send comment">
         {{tips.text}}<br><br>
         controller tips{{vm.model.tips}}
 
