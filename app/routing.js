@@ -19,7 +19,7 @@ angular.module ('myApp')
                controllerAs : 'vm'
            })
            .state ('vCard.comments_fs',{
-               url:'comments/:id',
+               url:'comment/:id',
                templateUrl :'templates/comments.html',
                controller:'vcardCtrl',
                controllerAs: 'vm'
