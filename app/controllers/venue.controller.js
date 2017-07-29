@@ -26,8 +26,9 @@ function venueCtrl(venueApi,$geolocation,$scope,NgMap) {
                     vm.model.venueRespone.response.groups[0].items.forEach(function(venue) {venue.venuePhotos = venueApi.venuePhotos.get({id: venue.venue.id});
 
                     })})
-
+            
         };
+
 
 
         });
@@ -45,7 +46,7 @@ function venueCtrl(venueApi,$geolocation,$scope,NgMap) {
                     venueRespone : venueApi.venueValues.get({lat : newPos.lat() , long : newPos.lng()}).$promise
                         .then(function(response) {
                             vm.model.venueRespone = response;
-                            vm.model.venueRespone.response.groups[0].items.forEach(function(venue) {venue.venuePhotos = venueApi.venuePhotos.get({id: venue.venue.id});
+                            vm.model.venueRespone.response.groups[0].items.forEach(function(venue) {venue.venuePhotos = venueApi.venuePhotos.get({id: venue.venue.id})
 
                             })})
 
@@ -53,6 +54,7 @@ function venueCtrl(venueApi,$geolocation,$scope,NgMap) {
             });
 
         };
+
     return vm;
 
     }

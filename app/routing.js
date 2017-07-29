@@ -30,8 +30,18 @@ angular.module ('myApp')
                controller : 'regCtrl',
                controllerAs : 'vm'
            })
-           .state ('test',{
-               url: '/test',
-               templateUrl :'test.html'
+           .state ('token',{
+               url: '/token',
+               templateUrl :'test.html',
+               controller : 'tokenCtrl',
+               controllerAs : 'tk'
            })
+           .state ('vCard.photos_fs',{
+               url : '/',
+               templateUrl : 'templates/photos.html',
+               controller:'vcardCtrl',
+               controllerAs: 'vm'
+
+           })
+
     });

@@ -2,9 +2,9 @@
 
 angular.module ("myApp")
        .controller ("vcardCtrl" ,vcardCtrl);
-vcardCtrl.$inject =['$stateParams','vcardApi','$scope'];
+vcardCtrl.$inject =['$stateParams','vcardApi','$scope','venueApi'];
 
-function vcardCtrl($stateParams,vcardApi,$scope) {
+function vcardCtrl($stateParams,vcardApi,$scope,venueApi) {
 
     let vm = this;
 
@@ -12,7 +12,9 @@ function vcardCtrl($stateParams,vcardApi,$scope) {
         vcardRespone : vcardApi.vcardValues.get({id: $stateParams.id}).$promise
             .then (function (response) {
                 vm.model.vcardRespone = response;
-                console.log('state id',$stateParams.id)
+
+                vm.model.vcardRespone.response.venue.venuePhotos = venueApi.venuePhotos.get({id: $stateParams.id});
+                console.log('vcard',vm.model.vcardRespone.response.venue.venuePhotos);
             }),
         tips : $scope.tips,
         sendTips : function (tips) {
@@ -21,9 +23,10 @@ function vcardCtrl($stateParams,vcardApi,$scope) {
             console.log ('tips srabotalo')
         }
 
+
     };
+    $scope.showPhotos = false;
+    $scope.showHide = false;
 
-
-    console.log('response',vm.model.vcardRespone);
     return vm;
 };
