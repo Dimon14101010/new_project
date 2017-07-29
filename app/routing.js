@@ -14,16 +14,20 @@ angular.module ('myApp')
            })
            .state ('vCard',{
                url:'/:id',
-               templateUrl : 'templates/vcard.html',
-               controller : 'vcardCtrl',
-               controllerAs : 'vm'
+               views : {
+                   '' : {
+                       templateUrl : 'templates/vcard.html',
+                       controller : 'vcardCtrl',
+                       controllerAs : 'vm'
+                   },
+                   'comments@vCard': {
+                       templateUrl : 'templates/comments.html',
+                       controller:'vcardCtrl',
+                       controllerAs: 'vm'
+                   }
+               }
            })
-           .state ('vCard.comments_fs',{
-               url:'/',
-               templateUrl :'templates/comments.html',
-               controller:'vcardCtrl',
-               controllerAs: 'vm'
-           })
+
            .state ('reg',{
                url: '/reg',
                templateUrl : 'templates/reg.html',
@@ -43,5 +47,14 @@ angular.module ('myApp')
                controllerAs: 'vm'
 
            })
+           .state ('testviews', {
+               url : '/testViews',
+               views : {
+                   '' : {templateUrl : 'templates/testViews.html'},
+                   'header@testviews' : {templateUrl : 'templates/testHeader.html'},
+                   'bottom@testviews' : {templateUrl : 'templates/testBottom.html'}
+               }
+           })
+
 
     });

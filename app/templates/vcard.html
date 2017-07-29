@@ -1,16 +1,18 @@
-<div>
-   <h1>{{vm.model.vcardRespone.response.venue.name}}</h1><br>
-   <h3>{{vm.model.vcardRespone.response.venue.location.address}}</h3>
+<div id="headData">
+   <h2>{{vm.model.vcardRespone.response.venue.name}}</h2>
+    <h4>{{vm.model.vcardRespone.response.venue.location.address}}</h4>
     <div ng-repeat="categorie in vm.model.vcardRespone.response.venue.categories">
         <span>категории:{{categorie.name}}</span>
     </div>
     <h4>rating{{vm.model.vcardRespone.response.venue.rating}} / 10</h4>
     <h4>phone{{vm.model.vcardRespone.response.venue.contact.phone}}</h4>
 
-    <div><a ui-sref="vCard.photos_fs" ng-click="showPhotos = !showPhotos"> photos from FOURSQUARE</a><div ng-show="showPhotos"><ui-view></ui-view></div></div>
+    <div><a ui-sref="vCard.photos_fs" ng-click="showPhotos = !showPhotos"> photos from FOURSQUARE</a></div>
+    <div ng-show="showPhotos"><ui-view></ui-view></div>
+    <div ng-click="showCom = !showCom">comments from FOURSQUARE</div>
+    <div ui-view="comments" ng-show="!showCom" ></div>
 
-    <div><a ui-sref="vCard.comments_fs" ng-click="showHide = !showHide"> comments from FOURSQUARE</a><div ng-show="showHide"><ui-view></ui-view></div></div>
-<br>Add comment :
+    <br>Add comment :
     <form name="comment">
 
         <input type="text" name="text" ng-model="tips.text">

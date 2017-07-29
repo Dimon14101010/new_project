@@ -26,7 +26,7 @@ function vcardCtrl($stateParams,vcardApi,$scope,venueApi) {
 
     };
     $scope.showPhotos = false;
-    $scope.showHide = false;
+    $scope.showCom = false;
 
     return vm;
 };
