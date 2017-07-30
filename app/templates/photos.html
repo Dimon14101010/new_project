@@ -2,4 +2,4 @@ hello i'm photos template
 
 
 <!--<pre>{{vm.model.vcardRespone.response.venue.venuePhotos.response.photos.items | json}}</pre>-->
-<div style="display: inline-block" ng-repeat="photos in vm.model.vcardRespone.response.venue.venuePhotos.response.photos.items"><img ng-src="{{photos.prefix}}100x100{{photos.suffix}}" title=""/></div>
+<div style="display: inline-block" ng-repeat="photos in vm.model.vcardRespone.response.venue.venuePhotos.response.photos.items track by $index"><img ng-mouseover="" ng-src="{{photos.prefix}}100x100{{photos.suffix}}" title=""/>view-index{{$index}} control-index{{vm.model.index}}</div>

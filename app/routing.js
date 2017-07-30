@@ -24,6 +24,11 @@ angular.module ('myApp')
                        templateUrl : 'templates/comments.html',
                        controller:'vcardCtrl',
                        controllerAs: 'vm'
+                   },
+                   'photos@vCard' : {
+                       templateUrl : 'templates/photos.html',
+                       controller:'vcardCtrl',
+                       controllerAs: 'vm'
                    }
                }
            })
@@ -40,13 +45,7 @@ angular.module ('myApp')
                controller : 'tokenCtrl',
                controllerAs : 'tk'
            })
-           .state ('vCard.photos_fs',{
-               url : '/',
-               templateUrl : 'templates/photos.html',
-               controller:'vcardCtrl',
-               controllerAs: 'vm'
 
-           })
            .state ('testviews', {
                url : '/testViews',
                views : {

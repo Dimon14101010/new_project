@@ -13,7 +13,6 @@ function vcardApi($resource) {
 
     };
 
-console.log ('tokenApi',tokenCtrl);
     return vcardData;
 
 }
