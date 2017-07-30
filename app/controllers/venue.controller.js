@@ -25,9 +25,11 @@ function venueCtrl(venueApi,$geolocation,$scope,NgMap) {
                     vm.model.venueRespone = response;
                     vm.model.venueRespone.response.groups[0].items.forEach(function(venue) {venue.venuePhotos = venueApi.venuePhotos.get({id: venue.venue.id});
 
-                    })})
+                    })}),
+            instaData : venueApi.instaPhotos.get({lat:position.lat , lng:position.long , token:venueApi.testData[1]})
+
             
-        };
+        }; console.log('instaData',vm.model.instaData)
 
 
 

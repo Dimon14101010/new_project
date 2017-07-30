@@ -2,15 +2,15 @@
 
 angular.module ("myApp")
     .controller ("tokenCtrl" ,tokenCtrl);
-tokenCtrl.$inject =['$location','$state','vcardApi'];
+tokenCtrl.$inject =['$location','$state','venueApi'];
 
 function tokenCtrl($location,$state,vcardApi) {
-    let token = this ;
-    token.model = {
-        getToken : $location.hash().split('=')
-    };
-    console.log ('token',token.model.getToken[1]);
+
+    let token = $location.url().split('=')
+
+    console.log ('token',token[1]);
 
     $state.go ('dashboard');
     return token;
+
 };
